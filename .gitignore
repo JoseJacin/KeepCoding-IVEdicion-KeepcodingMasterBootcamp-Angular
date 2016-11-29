@@ -50,3 +50,5 @@ jspm_packages
 
 # Ficheros de WebStorm
 .idea
+agenda/node_modules
+agenda/out
