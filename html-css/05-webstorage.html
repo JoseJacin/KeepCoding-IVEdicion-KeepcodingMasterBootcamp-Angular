@@ -1,0 +1,29 @@
+<!--Doctype de HTML5 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Storage</title>
+    </head>
+    <body>
+        <script>
+            // Se comprueba si Web Storage está disponible
+            if (typeof(Storage) !== "undefined") {
+                console.log("Web Storage disponible");
+
+                // Se guarda un valor en localStorage
+                //localStorage.setItem("mensaje", "Buenas noches KeepCoders!");
+
+                // Se recupera un valor de localStorage
+                //console.log(localStorage.getItem("mensaje"));
+
+                // Se guarda un valor en sessionStorage
+                sessionStorage.setItem("saludo", "Cómo vais gentucilla");
+
+                // Se recupera un valor de sessionStorage
+                console.log(sessionStorage.getItem("saludo"));
+            } else {
+                console.log("Web Storage no disponible");
+            }
+        </script>
+    </body>
+</html>

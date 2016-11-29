@@ -1,0 +1,34 @@
+<!--Doctype de HTML5 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Selectores</title>
+        <!-- Estilos CSS -->
+        <style>
+            /* Selector por valor de atributo */
+            a[href^="no"] { font-size: 20px; } /* Aplica el estilo sobre los elementos href que comiencen por "no" */
+            a[href$="ws"] { color: red } /* Aplica el estilo sobre los elementos href que terminen por "ws" */
+            a[href*="tr"] { text-decoration: line-through } /* Aplica el estilo sobre los elementos href que contengan por "tr" */
+
+            /* Selector de texto */
+            p::first-line { color: limegreen } /* Aplica el estilo sobre la primera línea de los elementos p (párrafo) */
+            p::first-letter { font-size: 30px } /* Aplica el estilo sobre la primera letra de los elementos p (párrafo) */
+            p::selection { background-color: black; color: white } /* Aplica el estilo sobre el texto seleccionado de los elementos p (párrafo) */
+        </style>
+    </head>
+    <body>
+        <!-- Barra de navegación -->
+        <nav>
+            <a href="novedades">Novedades</a>
+            <a href="reviews">Reviews</a>
+            <a href="entrevistas">Entrevistas</a>
+        </nav>
+        <!-- Párrafo -->
+        <p>
+            Hodor! Hodor hodor, HODOR hodor, hodor hodor. Hodor hodor - hodor - hodor hodor, hodor. Hodor hodor. Hodor. Hodor, hodor... Hodor hodor hodor; hodor hodor? Hodor hodor HODOR!
+            Hodor hodor... Hodor hodor hodor hodor, hodor. Hodor hodor?! Hodor hodor; hodor hodor hodor hodor; hodor hodor, hodor. Hodor hodor? Hodor hodor - hodor... Hodor hodor hodor
+            hodor! Hodor, hodor. Hodor. Hodor, HODOR hodor, hodor hodor... Hodor hodor hodor? Hodor! Hodor hodor, hodor, hodor. Hodor hodor hodor HODOR hodor, hodor hodor. Hodor! Hodor
+            hodor, hodor... Hodor hodor hodor, hodor. Hodor hodor... Hodor hodor hodor, hodor, hodor hodor.
+        </p>
+    </body>
+</html>
