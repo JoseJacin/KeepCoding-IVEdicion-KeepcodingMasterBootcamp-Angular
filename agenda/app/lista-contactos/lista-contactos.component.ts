@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "lista-contactos",
@@ -6,9 +6,15 @@ import { Component } from "@angular/core";
 
 })
 export class ListaContactosComponent {
-    contactos: string[] = [
-        "Tim Cook",
-        "Bill Gates",
-        "Elon Musk"
-    ];
+
+    // Se usa el decorador 'Input' para enlazar datos de entrada
+    @Input() contactos: string[];
+
+    // Se usa el decorador 'Output' para notificar datos de salida
+    @Output() eliminar: EventEmitter<string> = new EventEmitter();
+
+    // Se usa 'emit' para notificar eventos
+    notificarEliminacion(contacto: string): void {
+        this.eliminar.emit(contacto);
+    }
 }
