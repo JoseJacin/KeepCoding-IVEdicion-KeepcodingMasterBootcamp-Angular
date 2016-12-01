@@ -6,6 +6,7 @@ import { AppComponent }  from './app.component';
 import { ListaContactosComponent } from "./lista-contactos/lista-contactos.component";
 import { BindingComponent } from "./ejemplos/binding.component";
 import { ContactosService } from "./contactos.service";
+import { FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
 
 @NgModule({
   // En 'imports' se añaden otros módulos de los cuáles se depende
@@ -17,7 +18,8 @@ import { ContactosService } from "./contactos.service";
   declarations: [
       AppComponent,
       ListaContactosComponent,
-      BindingComponent
+      BindingComponent,
+      FormularioContactoComponent
   ],
   // En 'providers' se añaden todos los servicios de la aplicacion
   providers: [

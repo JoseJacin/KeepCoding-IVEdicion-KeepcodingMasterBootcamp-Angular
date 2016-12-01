@@ -15,4 +15,15 @@ export class ContactosService {
     obtenerContactos(): string[] {
         return this._contactos;
     }
+
+    // Método que agrega un contacto
+    agregarContacto(contacto: string): void {
+        this._contactos.push(contacto);
+    }
+
+    // Método que elimina un contacto
+    eliminarContacto(contacto: string): void {
+        this._contactos = this._contactos
+            .filter((c: string) => c !== contacto);
+    }
 }
