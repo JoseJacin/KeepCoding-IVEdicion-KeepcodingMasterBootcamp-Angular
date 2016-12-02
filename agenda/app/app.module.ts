@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 
 import { AppComponent }  from './app.component';
 import { ListaContactosComponent } from "./lista-contactos/lista-contactos.component";
@@ -8,11 +9,13 @@ import { BindingComponent } from "./ejemplos/binding.component";
 import { ContactosService } from "./contactos.service";
 import { FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
 
+
 @NgModule({
   // En 'imports' se añaden otros módulos de los cuáles se depende
   imports:      [
       BrowserModule,
-      FormsModule
+      FormsModule,
+      HttpModule
   ],
   // En 'declarations' se añaden todos los Componentes, Pipes y Directivas de la aplicación
   declarations: [

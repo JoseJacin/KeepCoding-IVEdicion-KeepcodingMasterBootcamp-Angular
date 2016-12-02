@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactosService } from "./contactos.service";
+import { ContactosService, Contacto } from "./contactos.service";
 
 @Component({
   // En 'selector' se indica el elemento HTML en el cuál se instanciará el componente
@@ -13,14 +13,15 @@ import { ContactosService } from "./contactos.service";
 })
 export class AppComponent implements OnInit {
 
-    listaContactos: string[];
+    listaContactos: Contacto[];
 
     // Se realiza la inyección de dependencias del servicio. Se aprovecha que TypeScript crea un atributo de aquellos
     // argumentos que tienen modificador de acceso y están tipados
     constructor(private _contactosService: ContactosService) {};
 
     private _actualizarListaContactos(): void {
-        this.listaContactos = this._contactosService.obtenerContactos();
+        this._contactosService.obtenerContactos()
+                              .subscribe((contactos: Contacto[]) => this.listaContactos = contactos);
     }
 
     // El método 'ngOnInit' viene dado por la interfaz 'OnInit', que es el hook en el cual se inicializan los valores del componente
@@ -28,13 +29,20 @@ export class AppComponent implements OnInit {
         this._actualizarListaContactos();
     }
 
-    agregarContacto(contacto: string): void {
-        this._contactosService.agregarContacto(contacto);
-        this._actualizarListaContactos();
+    agregarContacto(nombreContacto: string): void {
+        let contacto: Contacto = new Contacto();
+        contacto.nombre = nombreContacto;
+
+        this._contactosService.agregarContacto(contacto)
+                              .subscribe((nuevoContacto: Contacto) => this._actualizarListaContactos());
     }
 
     eliminarContacto(contacto: string): void {
-        this._contactosService.eliminarContacto(contacto);
-        this._actualizarListaContactos();
+        //
+        // let contacto: Contacto = new Contacto();
+        // contacto.nombre = nombreContacto;
+
+        // this._contactosService.eliminarContacto(contacto);
+        // this._actualizarListaContactos();
     }
 }
