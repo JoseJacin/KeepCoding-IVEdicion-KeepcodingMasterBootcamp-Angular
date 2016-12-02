@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactosService } from "./contactos.service";
+
 import { Contacto } from "./contacto";
 
 @Component({
@@ -52,6 +53,10 @@ export class AppComponent implements OnInit {
     }
 
     verDetallesDelContacto(contacto: Contacto): void {
-        this.contactoSeleccionado = contacto
+        this.contactoSeleccionado = contacto;
+    }
+
+    navegarRuta(ruta: string): void {
+        window.open(ruta, "_blank");
     }
 }

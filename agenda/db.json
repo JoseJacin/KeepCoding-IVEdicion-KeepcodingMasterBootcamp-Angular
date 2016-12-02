@@ -1,20 +1,31 @@
 {
   "contactos": [
     {
-      "nombre": "Tim Cook",
-      "id": 1
+      "nombre": "Bill",
+      "apellidos": "Gates",
+      "email": "bill.gates@microsoft.com",
+      "telefono": "555-123456",
+      "facebook": "bill.gates",
+      "twitter": "@billGates",
+      "id": 6
     },
     {
-      "nombre": "Elon Musk",
-      "id": 2
+      "nombre": "Elon",
+      "apellidos": " Musk",
+      "email": "elon.musk@tesla.com",
+      "telefono": "555-234567",
+      "facebook": "Elon-Musk-19958149870",
+      "twitter": "elonmusk",
+      "id": 7
     },
     {
-      "nombre": "Bill Gates",
-      "id": 3
-    },
-    {
-      "nombre": "Naranjito",
-      "id": 5
+      "nombre": "Tim",
+      "apellidos": "Cook",
+      "email": "tim.cook@apple.com",
+      "telefono": "555-345678",
+      "facebook": "Tim-Cook",
+      "twitter": "tim_cook",
+      "id": 8
     }
   ]
 }

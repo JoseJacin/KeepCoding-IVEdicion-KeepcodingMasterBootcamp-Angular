@@ -1,8 +1,26 @@
 <!-- La directiva '*ngIf' añade o elimina contenido del DIM según resuelva la expresión indicada como 'ture' o como 'false' -->
 <div *ngIf="contacto">
-    <!-- Nombre del contacto -->
-    <h5>{{ contacto.nombre }}</h5>
+    <!-- Nombre y apellidos del contacto -->
+    <h5>{{ contacto.nombre }} {{ contacto.apellidos }}</h5>
+    <hr>
+    <!-- Botones para ver perfiles en redes sociales -->
+    <button
+            (click)="notificarNavegacionFacebook()"
+            class="icono">
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    </button>
+    <button
+            (click)="notificarNavegacionTwitter()"
+            class="icono">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    </button>
+    <hr>
+    <!-- Datos de contacto: teléfono y correo -->
+    <div>
+        {{ contacto.telefono }} | {{ contacto.email }}
+    </div>
     <!-- Botón eliminar contacto -->
-    <button (click)="notificarEliminacion(contacto)"
-            class="u-full-width">Eliminar contacto</button>
+    <button
+            (click)="notificarEliminacion(contacto)"
+            class="u-full-width boton-eliminar">Eliminar contacto</button>
 </div>

@@ -25,7 +25,9 @@
                 <!-- Detalles del contacto seleccionado -->
                 <detalles-contacto
                         [contacto]="contactoSeleccionado"
-                        (eliminar)="eliminarContacto($event)">
+                        (eliminar)="eliminarContacto($event)"
+                        (navegarFacebook)="navegarRuta($event)"
+                        (navegarTwitter)="navegarRuta($event)">
                 </detalles-contacto>
             </div>
         </div>
