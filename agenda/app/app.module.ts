@@ -8,6 +8,7 @@ import { ListaContactosComponent } from "./lista-contactos/lista-contactos.compo
 import { BindingComponent } from "./ejemplos/binding.component";
 import { ContactosService } from "./contactos.service";
 import { FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
+import { DetallesContactoComponent } from "./detalles-contacto/detalles-contacto.component";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormularioContactoComponent } from "./formulario-contacto/formulario-co
       AppComponent,
       ListaContactosComponent,
       BindingComponent,
-      FormularioContactoComponent
+      FormularioContactoComponent,
+      DetallesContactoComponent
   ],
   // En 'providers' se añaden todos los servicios de la aplicacion
   providers: [

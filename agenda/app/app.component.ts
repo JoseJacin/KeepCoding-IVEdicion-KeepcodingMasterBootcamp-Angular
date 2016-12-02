@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactosService, Contacto } from "./contactos.service";
+import { ContactosService } from "./contactos.service";
+import { Contacto } from "./contacto";
 
 @Component({
   // En 'selector' se indica el elemento HTML en el cuál se instanciará el componente
@@ -14,14 +15,16 @@ import { ContactosService, Contacto } from "./contactos.service";
 export class AppComponent implements OnInit {
 
     listaContactos: Contacto[];
+    contactoSeleccionado: Contacto;
 
     // Se realiza la inyección de dependencias del servicio. Se aprovecha que TypeScript crea un atributo de aquellos
     // argumentos que tienen modificador de acceso y están tipados
     constructor(private _contactosService: ContactosService) {};
 
     private _actualizarListaContactos(): void {
-        this._contactosService.obtenerContactos()
-                              .subscribe((contactos: Contacto[]) => this.listaContactos = contactos);
+        this._contactosService
+            .obtenerContactos()
+            .subscribe((contactos: Contacto[]) => this.listaContactos = contactos);
     }
 
     // El método 'ngOnInit' viene dado por la interfaz 'OnInit', que es el hook en el cual se inicializan los valores del componente
@@ -29,20 +32,26 @@ export class AppComponent implements OnInit {
         this._actualizarListaContactos();
     }
 
-    agregarContacto(nombreContacto: string): void {
-        let contacto: Contacto = new Contacto();
-        contacto.nombre = nombreContacto;
-
-        this._contactosService.agregarContacto(contacto)
-                              .subscribe((nuevoContacto: Contacto) => this._actualizarListaContactos());
+    agregarContacto(contacto: Contacto): void {
+        this._contactosService
+            .agregarContacto(contacto)
+            .subscribe(() => this._actualizarListaContactos());
     }
 
-    eliminarContacto(contacto: string): void {
-        //
-        // let contacto: Contacto = new Contacto();
-        // contacto.nombre = nombreContacto;
+    eliminarContacto(contacto: Contacto): void {
+        // Se pregunta al usuario si está seguro de eliminar al contacto
+        if (confirm(`Estás seguro de eliminar a ${contacto.nombre}?`)) {
+            // En caso de estar seguro, se elimina el contacto
+            this._contactosService
+                .eliminarContacto(contacto)
+                .subscribe(() => {
+                    this.contactoSeleccionado = null;
+                    this._actualizarListaContactos();
+                });
+        }
+    }
 
-        // this._contactosService.eliminarContacto(contacto);
-        // this._actualizarListaContactos();
+    verDetallesDelContacto(contacto: Contacto): void {
+        this.contactoSeleccionado = contacto
     }
 }

@@ -13,7 +13,12 @@
         <!-- Se suscribe a eventos envolviendo con paréntesis el atributo del componente expuesto con el decorador 'Output' -->
         <lista-contactos
                 [contactos]="listaContactos"
-                (eliminar)="eliminarContacto($event)">
+                (contactoSeleccionado)="verDetallesDelContacto($event)">
         </lista-contactos>
+
+        <detalles-contacto
+                [contacto]="contactoSeleccionado"
+                (eliminar)="eliminarContacto($event)">
+        </detalles-contacto>
     </section>
 </div>

@@ -1,0 +1,7 @@
+<!-- La directiva '*ngIf' añade o elimina contenido del DIM según resuelva la expresión indicada como 'ture' o como 'false' -->
+<div *ngIf="contacto">
+    <!-- Nombre del contacto -->
+    <h5>{{ contacto.nombre }}</h5>
+    <!-- Botón eliminar contacto -->
+    <button (click)="notificarEliminacion(contacto)">Eliminar contacto</button>
+</div>
