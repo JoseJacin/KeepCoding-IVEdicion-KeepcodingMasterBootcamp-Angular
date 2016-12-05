@@ -2,34 +2,10 @@
     <header>
         <h1>Agenda</h1>
     </header>
+    <!-- Barra de Navegación -->
+    <barra-navegacion></barra-navegacion>
     <section>
-        <!-- Formulario de alta -->
-        <formulario-contacto
-                (nuevoContacto)="agregarContacto($event)">
-        </formulario-contacto>
-
-        <!-- Se distribuye el contenido en columnas -->
-        <div class="row">
-            <!-- Se distribuye el contenido en seis columnas -->
-            <div class="six columns">
-                <!-- Para enlazar datos de entrada a un componente, se usa como atributo entre corchetes el atributo expuesto con el
-                 decorador 'Input' en dicho componente -->
-                <!-- Se suscribe a eventos envolviendo con paréntesis el atributo del componente expuesto con el decorador 'Output' -->
-                <lista-contactos
-                        [contactos]="listaContactos"
-                        (contactoSeleccionado)="verDetallesDelContacto($event)">
-                </lista-contactos>
-            </div>
-            <!-- Se distribuye el contenido en otras seis columnas -->
-            <div class="six columns">
-                <!-- Detalles del contacto seleccionado -->
-                <detalles-contacto
-                        [contacto]="contactoSeleccionado"
-                        (eliminar)="eliminarContacto($event)"
-                        (navegarFacebook)="navegarRuta($event)"
-                        (navegarTwitter)="navegarRuta($event)">
-                </detalles-contacto>
-            </div>
-        </div>
+        <!-- Zona dinámica -->
+        <router-outlet></router-outlet>
     </section>
 </div>

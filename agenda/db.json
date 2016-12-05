@@ -10,15 +10,6 @@
       "id": 6
     },
     {
-      "nombre": "Elon",
-      "apellidos": " Musk",
-      "email": "elon.musk@tesla.com",
-      "telefono": "555-234567",
-      "facebook": "Elon-Musk-19958149870",
-      "twitter": "elonmusk",
-      "id": 7
-    },
-    {
       "nombre": "Tim",
       "apellidos": "Cook",
       "email": "tim.cook@apple.com",
@@ -26,6 +17,15 @@
       "facebook": "Tim-Cook",
       "twitter": "tim_cook",
       "id": 8
+    },
+    {
+      "nombre": "Elon",
+      "apellidos": "Musk",
+      "email": "elon.musk@tesla.com",
+      "telefono": "555-345678",
+      "facebook": "elon.musk",
+      "twitter": "@elonmusk",
+      "id": 9
     }
   ]
 }
