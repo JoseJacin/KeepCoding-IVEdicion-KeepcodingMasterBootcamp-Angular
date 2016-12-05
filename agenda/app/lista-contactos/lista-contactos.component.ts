@@ -12,10 +12,15 @@ export class ListaContactosComponent {
     // Se usa el decorador 'Input' para enlazar datos de entrada
     @Input() contactos: Contacto[];
 
-
     @Output() contactoSeleccionado: EventEmitter<Contacto> = new EventEmitter();
+
+    sentidoOrdenacion: string = "asc";
 
     notificarContactoSeleccionado(contacto: Contacto): void {
         this.contactoSeleccionado.emit(contacto);
+    }
+
+    cambiarOrden (): void {
+        this.sentidoOrdenacion = this.sentidoOrdenacion === "asc" ? "desc" : "asc";
     }
 }
