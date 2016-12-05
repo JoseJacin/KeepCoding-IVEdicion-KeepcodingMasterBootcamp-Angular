@@ -13,19 +13,10 @@
       "nombre": "Tim",
       "apellidos": "Cook",
       "email": "tim.cook@apple.com",
-      "telefono": "555-345678",
-      "facebook": "Tim-Cook",
-      "twitter": "tim_cook",
-      "id": 8
-    },
-    {
-      "nombre": "Elon",
-      "apellidos": "Musk",
-      "email": "elon.musk@tesla.com",
-      "telefono": "555-345678",
-      "facebook": "elon.musk",
-      "twitter": "@elonmusk",
-      "id": 9
+      "telefono": "555.123456",
+      "facebook": "tim.cook",
+      "twitter": "@timCook",
+      "id": 7
     }
   ]
 }

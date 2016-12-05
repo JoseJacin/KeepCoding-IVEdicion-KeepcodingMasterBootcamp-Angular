@@ -13,6 +13,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { MisContactosComponent } from "./mis-contactos/mis-contactos.component";
 import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.component";
 import { BarraNavegacionComponent } from "./barra-navegacion/barra-navegacion.component";
+import { ContactosResolve } from "./contactos-resolve.service";
 
 @NgModule({
   // En 'imports' se añaden otros módulos de los cuáles se depende
@@ -35,7 +36,8 @@ import { BarraNavegacionComponent } from "./barra-navegacion/barra-navegacion.co
   ],
   // En 'providers' se añaden todos los servicios de la aplicacion
   providers: [
-      ContactosService
+      ContactosService,
+      ContactosResolve
   ],
   // En 'boostrap' se indica el componente raíz de la aplicación
   bootstrap:    [

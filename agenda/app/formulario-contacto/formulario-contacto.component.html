@@ -1,83 +1,93 @@
-<!-- Se puede obtener una referencia al objeto FormGroup correspondiente a un formulario a través de la directiva 'ngForm'.
-Tan solo tenemos que asignarla a una 'template reference variable'-->
-<form #formularioContacto="ngForm"
-      (ngSubmit)="notificarCreacionContacto(formularioContacto)"
-      novalidate>
-    <!--Nombre del contacto -->
-    <div>
-        <label for="nombre">Nombre</label>
-        <input
-                id="nombre"
-                name="nombre"
-                type="text"
-                placeholder="Ej. Tim"
-                ngModel
-                required
-                #campoNombre="ngModel">
-        <div class="mensaje-error"
-             *ngIf="campoNombre.touched && campoNombre.invalid">
-            El nombre es un campo obligtorio</div>
+<div class="row">
+    <div class="offset-by-three six columns">
+        <!-- Se puede obtener una referencia al objeto FormGroup correspondiente a un formulario a través de la directiva 'ngForm'.
+        Tan solo tenemos que asignarla a una 'template reference variable'-->
+        <form #formularioContacto="ngForm"
+              (ngSubmit)="notificarCreacionContacto(formularioContacto)"
+              novalidate>
+            <!--Nombre del contacto -->
+            <div>
+                <label for="nombre">Nombre</label>
+                <input
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                        placeholder="Ej. Tim"
+                        ngModel
+                        required
+                        #campoNombre="ngModel"
+                        class="u-full-width">
+                <div class="mensaje-error"
+                     *ngIf="campoNombre.touched && campoNombre.invalid">
+                    El nombre es un campo obligtorio</div>
+            </div>
+            <!-- Apellidos del contacto -->
+            <div>
+                <label for="apellidos">Apellidos</label>
+                <input
+                        id="apellidos"
+                        name="apellidos"
+                        type="text"
+                        placeholder="Ej. Cook"
+                        ngModel
+                        required
+                        #campoApellidos="ngModel"
+                        class="u-full-width">
+                <div class="mensaje-error"
+                     *ngIf="campoApellidos.touched && campoApellidos.invalid">
+                    El campo appelidos es obligtorio
+                </div>
+            </div>
+            <!-- Email del contacto -->
+            <div>
+                <label for="email">Correo Electrónico</label>
+                <input
+                        id="email"
+                        name="email"
+                        type="text"
+                        placeholder="Ej. tim.cook@apple.com"
+                        ngModel
+                        class="u-full-width">
+            </div>
+            <!-- teléfono del contacto -->
+            <div>
+                <label for="telefono">Teléfono</label>
+                <input
+                        id="telefono"
+                        name="telefono"
+                        type="text"
+                        placeholder="Ej. 555-123456"
+                        ngModel
+                        class="u-full-width">
+            </div>
+            <!-- Facebook del contacto -->
+            <div>
+                <label for="facebook">Facebook</label>
+                <input
+                        id="facebook"
+                        name="facebook"
+                        type="text"
+                        placeholder="Ej. tim.cook"
+                        ngModel
+                        class="u-full-width">
+            </div>
+            <!-- Twitter del contacto -->
+            <div>
+                <label for="twitter">Twitter</label>
+                <input
+                        id="twitter"
+                        name="twitter"
+                        type="text"
+                        placeholder="Ej. @timcook"
+                        ngModel
+                        class="u-full-width">
+            </div>
+            <div>
+                <button
+                        type="submit"
+                        class="button-primary u-full-width"
+                        [disabled]="formularioContacto.invalid">Añadir</button>
+            </div>
+        </form>
     </div>
-    <!-- Apellidos del contacto -->
-    <div>
-        <label for="apellidos">Apellidos</label>
-        <input
-                id="apellidos"
-                name="apellidos"
-                type="text"
-                placeholder="Ej. Cook"
-                ngModel
-                required
-                #campoApellidos="ngModel">
-        <div class="mensaje-error"
-            *ngIf="campoApellidos.touched && campoApellidos.invalid">
-            El campo appelidos es obligtorio
-        </div>
-    </div>
-    <!-- Email del contacto -->
-    <div>
-        <label for="email">Correo Electrónico</label>
-        <input
-                id="email"
-                name="email"
-                type="text"
-                placeholder="Ej. tim.cook@apple.com"
-                ngModel>
-    </div>
-    <!-- teléfono del contacto -->
-    <div>
-        <label for="telefono">Teléfono</label>
-        <input
-                id="telefono"
-                name="telefono"
-                type="text"
-                placeholder="Ej. 555-123456"
-                ngModel>
-    </div>
-    <!-- Facebook del contacto -->
-    <div>
-        <label for="facebook">Facebook</label>
-        <input
-                id="facebook"
-                name="facebook"
-                type="text"
-                placeholder="Ej. tim.cook"
-                ngModel>
-    </div>
-    <!-- Twitter del contacto -->
-    <div>
-        <label for="twitter">Twitter</label>
-        <input
-                id="twitter"
-                name="twitter"
-                type="text"
-                placeholder="Ej. @timcook"
-                ngModel>
-    </div>
-    <div>
-        <button
-                type="submit"
-                class="button-primary"
-                [disabled]="formularioContacto.invalid">Añadir</button>
-    </div>
-</form>
+</div>

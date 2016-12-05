@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-
+import { ActivatedRoute } from "@angular/router";
 
 import { Contacto } from "../contacto";
 import { ContactosService } from "../contactos.service";
@@ -13,17 +13,21 @@ export class MisContactosComponent implements OnInit {
 
     // Se realiza la inyección de dependencias del servicio. Se aprovecha que TypeScript crea un atributo de aquellos
     // argumentos que tienen modificador de acceso y están tipados
-    constructor(private _contactosService: ContactosService) {};
+    constructor(
+        private _contactosService: ContactosService,
+        private _activatedRoute: ActivatedRoute) {};
 
-    private _actualizarListaContactos(): void {
-        this._contactosService
-            .obtenerContactos()
-            .subscribe((contactos: Contacto[]) => this.listaContactos = contactos);
-    }
+    // private _actualizarListaContactos(): void {
+    //     this._contactosService
+    //         .obtenerContactos()
+    //         .subscribe((contactos: Contacto[]) => this.listaContactos = contactos);
+    // }
 
     // El método 'ngOnInit' viene dado por la interfaz 'OnInit', que es el hook en el cual se inicializan los valores del componente
     ngOnInit(): void {
-        this._actualizarListaContactos();
+        this._activatedRoute.data.forEach((data: {contactos: Contacto[] }) => {
+            this.listaContactos = data.contactos;
+        });
     }
 
     eliminarContacto(contacto: Contacto): void {
@@ -34,7 +38,7 @@ export class MisContactosComponent implements OnInit {
                 .eliminarContacto(contacto)
                 .subscribe(() => {
                     this.contactoSeleccionado = null;
-                    this._actualizarListaContactos();
+                    this.listaContactos = this.listaContactos.filter((c: Contacto) => c.id !== contacto.id);
                 });
         }
     }

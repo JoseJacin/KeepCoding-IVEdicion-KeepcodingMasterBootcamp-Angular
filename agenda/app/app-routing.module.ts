@@ -3,12 +3,16 @@ import { NgModule } from "@angular/core";
 
 import { MisContactosComponent } from "./mis-contactos/mis-contactos.component";
 import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.component";
+import { ContactosResolve } from "./contactos-resolve.service";
 
-// Se definen las rutas de la aplicación. Las rutas son pares 'ruta+componente'
+// Se definen las rutas de la aplicación. Las rutas son pares 'ruta' + 'componente'
 const rutas: Routes = [
     {
         path: "mis-contactos",
-        component: MisContactosComponent
+        component: MisContactosComponent,
+        resolve: {
+            contactos: ContactosResolve
+        }
     },
     {
         path: "nuevo-contacto",
