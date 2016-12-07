@@ -1,0 +1,23 @@
+<div>
+    <h1>Ejemplos de Pipes</h1>
+    <div>
+        <!-- Ejemplo de CurrencyPipe -->
+        <strong>CurrencyPipe: </strong> {{ cantidad | currency:'EUR':true: '1.4-6' }}
+    </div>
+    <div>
+        <!-- Ejemplo de lowerCase y upperCase -->
+        <strong>LowerCasePipe: </strong> {{ mensaje | lowercase }}
+        <strong>UperCasePipe: </strong> {{ mensaje | uppercase }}
+    </div>
+    <!-- Ejemplo de PercentPipe -->
+    <div>
+        <strong>PercentPipe: </strong> {{ cantidad | percent }}
+    </div>
+    <!-- Ejemplo de SlicePipe -->
+    <div>
+        <strong>SlicePipe desde el componente: </strong>
+        <ul>
+            <li *ngFor="let numero of coleccionTroceada">{{ numero }}</li>
+        </ul>
+    </div>
+</div>

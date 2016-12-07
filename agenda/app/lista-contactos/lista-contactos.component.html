@@ -5,6 +5,14 @@
        [class.fa-sort-alpha-asc]="sentidoOrdenacion !== 'asc'"
        [class.fa-sort-alpha-desc]="sentidoOrdenacion === 'asc'"
        aria-hidden="true"></i>
+
+    <!-- Directiva de Atributo de Clase -->
+    <!--<i class="fa"
+       [ngClass]="{
+         'fa-sort-alpha-asc': sentidoOrdenacion !== 'asc',
+         'fa-sort-alpha-desc': sentidoOrdenacion === 'asc'
+        }"
+       aria-hidden="true"></i>-->
 </button>
 <ul>
     <!-- Con la directiva 'ngFor' se itera una colección y se replica el elemento HTML (contacto) por cada item en la lista (contactos) -->
