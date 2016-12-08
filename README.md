@@ -1,2 +1,2 @@
-# KeepCoding-IVEdicion-KeepcodingMasterBootcamp-AngularJS
-KeepCoding-IVEdicion-KeepcodingMasterBootcamp-AngularJS
+# KeepCoding-IVEdicion-KeepcodingMasterBootcamp-Angular
+KeepCoding-IVEdicion-KeepcodingMasterBootcamp-Angular
