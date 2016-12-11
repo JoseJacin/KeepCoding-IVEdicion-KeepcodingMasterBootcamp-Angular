@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   // En 'selector' se indica el elemento HTML en el cuál se instanciará el componente
